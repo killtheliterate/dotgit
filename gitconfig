@@ -1,0 +1,49 @@
+[user]
+  name = Garrett Dawson
+  email = killtheliterate@gmail.com
+[core]
+  editor = $EDITOR
+  excludesfile = "${HOME}/.config/git/gitignore_global"
+  pager = less -FRSX
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[color]
+  interactive = auto
+  ui = true
+  pager = true
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+[mergetool]
+  keepBackup = false
+  keepTemporaries = false
+  prompt = false
+[diff]
+  tool = vimdiff
+  compactionHeuristic = true
+[push]
+  default = current
+[help]
+  autocorrect = 1
+[alias]
+  l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+  ll = log --stat --abbrev-commit
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+[rerere]
+  enabled = 1
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[merge]
+  keepBackup = false
+  tool = p4merge
+[mergetool "p4merge"]
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
